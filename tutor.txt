@@ -1,0 +1,342 @@
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1
+$ git init
+Initialized empty Git repository in D:/git/gittutorial1/.git/
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ ls
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ ls
+index.html
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ touch README.md
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ touch bluestyle.css
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        bluestyle.css
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git restore README.md
+error: pathspec 'README.md' did not match any file(s) known to git
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git restore index.html
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        bluestyle.css
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git add --all
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+        new file:   bluestyle.css
+        new file:   index.html
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git add --all
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+        new file:   bluestyle.css
+        new file:   index.html
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git commit -m "First release of hello world"
+[master (root-commit) b1726ca] First release of hello world
+ 3 files changed, 26 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 bluestyle.css
+ create mode 100644 index.html
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git log
+commit b1726ca0c0373dba5175b96139f92e7b81b91364 (HEAD -> master)
+Author: ali-karakoc <lkrkckrkc@gmail.com>
+Date:   Wed Jan 25 20:05:59 2023 +0300
+
+    First release of hello world
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status --short
+ M index.html
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git commit -a -m "Updated index.html with a new line"
+[master 2914a77] Updated index.html with a new line
+ 1 file changed, 1 insertion(+)
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git log
+commit 2914a77bce48f443464de1b08dd7f40651c193ff (HEAD -> master)
+Author: ali-karakoc <lkrkckrkc@gmail.com>
+Date:   Wed Jan 25 20:11:02 2023 +0300
+
+    Updated index.html with a new line
+
+commit b1726ca0c0373dba5175b96139f92e7b81b91364
+Author: ali-karakoc <lkrkckrkc@gmail.com>
+Date:   Wed Jan 25 20:05:59 2023 +0300
+
+    First release of hello world
+
+$ git branch
+* master
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git branch hello-world-images
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git branch
+  hello-world-images
+* master
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        benim.jpg
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git add --all
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   benim.jpg
+        modified:   index.html
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git commit -m "Added image to Hello World"
+[hello-world-images f175486] Added image to Hello World
+ 2 files changed, 2 insertions(+)
+ create mode 100644 benim.jpg
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git checkout -b sanane
+Switched to a new branch 'sanane'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (sanane)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git status
+On branch hello-world-images
+nothing to commit, working tree clean
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ ls
+benim.jpg  bluestyle.css  index.html  README.md
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git checkout -b emergency-fix
+Switched to a new branch 'emergency-fix'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (emergency-fix)
+$ git status
+On branch emergency-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (emergency-fix)
+$
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (emergency-fix)
+$ git add index.html
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (emergency-fix)
+$ git commit -m "updated index.html with emergency fix"
+[emergency-fix b927fe6] updated index.html with emergency fix
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (emergency-fix)
+$ git checkout öaster
+error: pathspec 'öaster' did not match any file(s) known to git
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (emergency-fix)
+$ git checkout master
+Switched to branch 'master'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git merge emergency-fix
+Updating 2914a77..b927fe6
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git branch emergency-fix
+fatal: A branch named 'emergency-fix' already exists.
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git branch -d emergency-fix
+Deleted branch emergency-fix (was b927fe6).
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git add --all
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git commit -m "added new image"
+[hello-world-images 7a31651] added new image
+ 1 file changed, 2 insertions(+)
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git merge hello-world-images
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   benim.jpg
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master|MERGING)
+$ git add index.html
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        new file:   benim.jpg
+        modified:   index.html
+
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master|MERGING)
+$ git commit -m "merged with hello-world-images after fixing conflicts"
+[master 69fa92d] merged with hello-world-images after fixing conflicts
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$ git branch -d hello-world-images
+Deleted branch hello-world-images (was 7a31651).
+
+eneskaan@ENESKAAN MINGW64 /d/git/gittutorial1 (master)
+$
